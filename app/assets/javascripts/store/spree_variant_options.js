@@ -192,7 +192,7 @@ function VariantOptions(params) {
       // Replace product price by "(select)" only when there are at least 1 variant not out-of-stock
       variants = $("div.variant-options.index-0");
       if (variants.find("a.option-value.out-of-stock").length != variants.find("a.option-value").length)
-        price.text('(select)');
+        price.text(('unselected' in variant_options_i18n) ? variant_options_i18n.unselected : '(select)');
     }
   }
 
@@ -234,3 +234,5 @@ function VariantOptions(params) {
   $(document).ready(init);
 
 };
+
+variant_options_i18n = {}; 
